@@ -1,5 +1,5 @@
 {
-  "author" : "Kang Chen",
+  "author" : "Philippe Hong, Kang Chen",
   "commands" : [
     {
       "script" : "script.cocoascript",
@@ -18,6 +18,6 @@
   "identifier" : "",
   "version" : "1.0.0",
   "description" : "Export at different scales.",
-  "authorEmail" : "satoriwild@gmail.com",
+  "authorEmail" : "me@philippehong.com",
   "name" : "Export Scale Generator"
 }
