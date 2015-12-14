@@ -1,0 +1,127 @@
+// The MIT License (MIT)
+//
+// Copyright (c) 2015 Kang Chen (kangchen.me, www.satoriwild.com)
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
+
+var SIZES = []; // e.g. [16, 32, 128, 256, 512]
+var SCALES = [];
+
+function prompt() {
+  log('prompt called');
+
+  var informativeText = 'Comma separated integers.\ne.g. 1, 2, 3'
+  var alert = [NSAlert alertWithMessageText:'Enter scales'
+                              defaultButton:'OK'
+                            alternateButton:'Cancel'
+                                otherButton:nil
+                  informativeTextWithFormat:informativeText];
+
+  var textField = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 200, 24)];
+  textField.stringValue = '1, 2, 3';
+  alert.setAccessoryView(textField);
+
+  var button = alert.runModal();
+  if (button == NSAlertDefaultReturn) {
+    SCALES = textField.stringValue().split(/,\s*/).map(function (str) {
+      return parseFloat(str);
+    });
+  }
+  log('SCALES');
+  log(SCALES);
+}
+
+
+function compare(a, b) {
+  return b - a;
+}
+
+
+function prepareExportSizes(layer) {
+  log('=== ' + layer.name() + ' ===');
+  log('Remove all export sizes of layer \'' + layer.name() + '\'.');
+  var sizes = layer.exportOptions().sizes();
+  sizes.removeAllObjects();
+
+  //SIZES.sort(compare);
+  //SCALES.sort(compare);
+
+  for (scale of SCALES) {
+    //var height = Math.floor(size * scale);
+    //var suffix = '_' + size + 'x' + size;
+    suffix = '';
+    if ( scale == 1 ) {
+      suffix = ''
+    }
+    if (scale > 1) {
+      suffix += '@' + scale + 'x';
+    }
+
+    addExportSize(layer, scale, suffix);
+  }
+
+
+  // add and remove a new export size to refresh UI
+  layer.exportOptions().addExportSize();
+  sizes.removeObjectAtIndex(sizes.count() - 1));
+}
+
+
+function addExportSize(layer, scale, suffix, format) {
+
+  if (!format) {
+    format = 'png';
+  }
+
+  // log('Add \'' + layer.name() + suffix + '\' (' + height + 'h' + ')');
+  log('Add \'' + layer.name() + suffix + '\' (' + scale + 'h' + ')');
+
+  var size = layer.exportOptions().addExportSize();
+  log('size');
+  log(size);
+  size.setFormat(format);
+  size.setName(suffix);
+  log('set scale.');
+  log(scale);
+  size.setScale(scale);
+  //size.setVisibleScaleType(2); // e.g. 512h
+}
+
+var onRun = function(context) {
+  var selectedLayers = context.selection;
+  var selectedCount = selectedLayers.count();
+
+  if (selectedCount == 0) {
+    log('No layers are selected.');
+    return;
+  }
+
+  prompt();
+
+  for (var i = 0; i < selectedCount; i++) {
+    var layer = selectedLayers[i];
+    if (i != 0) {
+      log('');
+    }
+    prepareExportSizes(layer);
+  }
+
+  log('\nDone.');
+};

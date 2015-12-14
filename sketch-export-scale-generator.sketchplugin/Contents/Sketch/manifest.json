@@ -1,0 +1,23 @@
+{
+  "author" : "Kang Chen",
+  "commands" : [
+    {
+      "script" : "script.cocoascript",
+      "handler" : "onRun",
+      "shortcut" : "",
+      "name" : "Generate Scales",
+      "identifier" : "Generate Scales"
+    }
+  ],
+  "menu" : {
+    "items" : [
+      "Generate Scales"
+    ],
+    "title" : "Export Scale Generator"
+  },
+  "identifier" : "",
+  "version" : "1.0.0",
+  "description" : "Export at different scales.",
+  "authorEmail" : "satoriwild@gmail.com",
+  "name" : "Export Scale Generator"
+}
