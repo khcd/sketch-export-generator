@@ -16,6 +16,8 @@ Installation
 Usage
 -----
 
+![alt text](http://philippehong.com/download/sketchgeneratorexport.gif "Logo Sketch Export Generator")
+
 1. Select layers.
 
 2. Tap the shortcut "Shift + Option + Command + E" or go to the menu: Plugins > Sketch Export Generator > Add iOS and Android Exports
