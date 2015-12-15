@@ -1,6 +1,8 @@
 Sketch Export Sizes Generator
 =============================
 
+![alt text](http://philippehong.com/download/SketchExportGenerator.png "Logo Sketch Export Generator")
+
 A simple plugin that exports an asset at different scales, to make life for a designer working across multiple devices more convenient.
 
 
