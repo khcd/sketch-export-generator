@@ -15,11 +15,19 @@
       "name" : "generate scale sizes for android",
       "identifier" : "exportAndroid"
     }
+    {
+      "script" : "handler.cocoascript",
+      "handler" : "exportAll",
+      "shortcut" : "ctrl shift 9",
+      "name" : "generate scale sizes for both ios and android",
+      "identifier" : "exportAll"
+    }
   ],
   "menu" : {
     "items" : [
       "exportIOS",
-      "exportAndroid"
+      "exportAndroid",
+      "exportAll"
     ]
   },
   "identifier" : "me.kangchen.export-scale-generator",

@@ -29,7 +29,6 @@ function setScale(scales) {
 }
 
 function prompt() {
-  log('prompt called');
 
   var informativeText = 'Comma separated integers.\ne.g. 1, 2, 3'
   var alert = [NSAlert alertWithMessageText:'Enter scales'
@@ -48,8 +47,8 @@ function prompt() {
       return parseFloat(str);
     });
   }
-  log('SCALES');
-  log(SCALES);
+  //log('SCALES');
+  //log(SCALES);
 }
 
 
@@ -68,17 +67,7 @@ function prepareExportSizes(layer) {
   //SCALES.sort(compare);
 
   for (scale of SCALES) {
-    //var height = Math.floor(size * scale);
-    //var suffix = '_' + size + 'x' + size;
-    suffix = '';
-    if ( scale == 1 ) {
-      suffix = ''
-    }
-    if (scale > 1) {
-      suffix += '@' + scale + 'x';
-    }
-
-    addExportSize(layer, scale, suffix);
+    addExportSize(layer, scale.size, scale.suffix);
   }
 
 
@@ -94,29 +83,34 @@ function addExportSize(layer, scale, suffix, format) {
     format = 'png';
   }
 
-  // log('Add \'' + layer.name() + suffix + '\' (' + height + 'h' + ')');
-  log('Add \'' + layer.name() + suffix + '\' (' + scale + 'h' + ')');
+  //log('Add \'' + layer.name() + suffix + '\' (' + scale + 'h' + ')');
 
   var size = layer.exportOptions().addExportSize();
-  log('size');
-  log(size);
+  //log('size');
+  //log(size);
   size.setFormat(format);
   size.setName(suffix);
-  log('set scale.');
-  log(scale);
+  //log('set scale.');
+  //log(scale);
   size.setScale(scale);
   //size.setVisibleScaleType(2); // e.g. 512h
 }
 
-var runExport = function(context) {
+function runExportIOS(context) {
+  runExport(context);
+}
 
-  log('run export');
+function runExportAndroid(context) {
+  runExport(context);
+}
+
+function runExport(context) {
 
   var selectedLayers = context.selection;
   var selectedCount = selectedLayers.count();
 
   if (selectedCount == 0) {
-    log('No layers are selected.');
+    //log('No layers are selected.');
     return;
   }
 
