@@ -8,8 +8,8 @@ var exportIOS = function(context) {
     {size: 2, suffix: "@2x"},
     {size: 3, suffix: "@3x"}
   ])
-	runExport(context);
-  context.document.showMessage("Generated scales for IOS");
+	runExportIOS(context);
+  context.document.showMessage("iOS Exports added");
 }
 
 var exportAndroid = function(context) {
@@ -27,11 +27,12 @@ var exportAndroid = function(context) {
     {size: 2, suffix: "-xhdpi"},
     {size: 3, suffix: "-xxhdpi"}
   ])
-	runExport(context);
-  context.document.showMessage("Generated scales for Android");
+	runExportAndroid(context);
+  context.document.showMessage("Android Exports added");
 }
 
 var exportAll = function(context) {
+
   setScale([
     {size: 1, suffix: ""},
     {size: 2, suffix: "@2x"},
@@ -42,5 +43,5 @@ var exportAll = function(context) {
     {size: 3, suffix: "-xxhdpi"}
   ])
   runExport(context);
-  context.document.showMessage("Generated scales for IOS and Android");
+  context.document.showMessage("iOS and Android Exports added");
 }

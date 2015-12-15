@@ -5,21 +5,21 @@
       "script" : "handler.cocoascript",
       "handler" : "exportIOS",
       "shortcut" : "ctrl shift 1",
-      "name" : "generate scales for ios",
+      "name" : "Add iOS Exports",
       "identifier" : "exportIOS"
     },
     {
       "script" : "handler.cocoascript",
       "handler" : "exportAndroid",
       "shortcut" : "ctrl shift 2",
-      "name" : "generate scales for android",
+      "name" : "Add Android Exports",
       "identifier" : "exportAndroid"
     },
     {
       "script" : "handler.cocoascript",
       "handler" : "exportAll",
       "shortcut" : "ctrl shift 9",
-      "name" : "generate scales for both ios and android",
+      "name" : "Add iOS and Android Exports",
       "identifier" : "exportAll"
     }
   ],
