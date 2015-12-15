@@ -2,20 +2,27 @@
   "author" : "Philippe Hong, Kang Chen",
   "commands" : [
     {
-      "script" : "script.cocoascript",
-      "handler" : "onRun",
-      "shortcut" : "",
-      "name" : "Generate Scales",
-      "identifier" : "Generate Scales"
+      "script" : "handler.cocoascript",
+      "handler" : "exportIOS",
+      "shortcut" : "ctrl shift 1",
+      "name" : "generate scale sizes for ios",
+      "identifier" : "exportIOS"
+    },
+    {
+      "script" : "handler.cocoascript",
+      "handler" : "exportAndroid",
+      "shortcut" : "ctrl shift 2",
+      "name" : "generate scale sizes for android",
+      "identifier" : "exportAndroid"
     }
   ],
   "menu" : {
     "items" : [
-      "Generate Scales"
-    ],
-    "title" : "Export Scale Generator"
+      "exportIOS",
+      "exportAndroid"
+    ]
   },
-  "identifier" : "",
+  "identifier" : "me.kangchen.export-scale-generator",
   "version" : "1.0.0",
   "description" : "Export at different scales.",
   "authorEmail" : "me@philippehong.com",

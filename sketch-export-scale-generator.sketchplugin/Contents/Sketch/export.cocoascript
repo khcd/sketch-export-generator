@@ -1,7 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2015 Philippe Hong, (www.philippehong.com)
-// Kang Chen,  (kangchen.me, www.satoriwild.com)
+// Copyright (c) 2015 Philippe Hong (www.philippehong.com) & Kang Chen (kangchen.me, www.satoriwild.com)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,6 +23,10 @@
 
 var SIZES = []; // e.g. [16, 32, 128, 256, 512]
 var SCALES = [];
+
+function setScale(scales) {
+  SCALES = scales
+}
 
 function prompt() {
   log('prompt called');
@@ -105,7 +108,10 @@ function addExportSize(layer, scale, suffix, format) {
   //size.setVisibleScaleType(2); // e.g. 512h
 }
 
-var onRun = function(context) {
+var runExport = function(context) {
+
+  log('run export');
+
   var selectedLayers = context.selection;
   var selectedCount = selectedLayers.count();
 
@@ -114,7 +120,8 @@ var onRun = function(context) {
     return;
   }
 
-  prompt();
+  // use this if you want to override default scales for IOS and Android
+  //prompt();
 
   for (var i = 0; i < selectedCount; i++) {
     var layer = selectedLayers[i];
