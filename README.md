@@ -3,7 +3,7 @@ Sketch Export Generator
 
 ![alt text](http://philippehong.com/download/SketchExportGenerator.png "Logo Sketch Export Generator")
 
-A simple plugin to Sketch to generate export in iOS and Android with shortcuts.
+A simple plugin for Sketch to generate export in iOS and Android with shortcuts.
 
 
 Installation
@@ -11,7 +11,7 @@ Installation
 
 1. Download the latest plugin by cloning this repo
 
-2. Unzip it and open the `sketch-export-scale-generator.sketchplugin` file.
+2. Unzip it and open the `Sketch-export-generator.sketchplugin` file.
 
 Usage
 -----
