@@ -1,0 +1,38 @@
+{
+  "author" : "Philippe Hong, Kang Chen",
+  "commands" : [
+    {
+      "script" : "handler.cocoascript",
+      "handler" : "exportIOS",
+      "shortcut" : "option shift cmd i",
+      "name" : "Add iOS Exports",
+      "identifier" : "exportIOS"
+    },
+    {
+      "script" : "handler.cocoascript",
+      "handler" : "exportAndroid",
+      "shortcut" : "option shift cmd a",
+      "name" : "Add Android Exports",
+      "identifier" : "exportAndroid"
+    },
+    {
+      "script" : "handler.cocoascript",
+      "handler" : "exportAll",
+      "shortcut" : "option shift cmd e",
+      "name" : "Add iOS and Android Exports",
+      "identifier" : "exportAll"
+    }
+  ],
+  "menu" : {
+    "items" : [
+      "exportIOS",
+      "exportAndroid",
+      "exportAll"
+    ]
+  },
+  "identifier" : "me.kangchen.export-scale-generator",
+  "version" : "1.0.0",
+  "description" : "A simple plugin to add iOS and Android exports with shortcut.",
+  "authorEmail" : "me@philippehong.com",
+  "name" : "Sketch Export Generator"
+}
