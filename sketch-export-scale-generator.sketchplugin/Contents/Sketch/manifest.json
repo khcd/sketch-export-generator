@@ -32,7 +32,7 @@
   },
   "identifier" : "me.kangchen.export-scale-generator",
   "version" : "1.0.0",
-  "description" : "Export at different scales.",
+  "description" : "A simple plugin to add iOS and Android exports with shortcut.",
   "authorEmail" : "me@philippehong.com",
-  "name" : "Export Scale Generator"
+  "name" : "Sketch Export Generator"
 }

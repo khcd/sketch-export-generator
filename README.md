@@ -1,9 +1,9 @@
-Sketch Export Sizes Generator
+Sketch Export Generator
 =============================
 
 ![alt text](http://philippehong.com/download/SketchExportGenerator.png "Logo Sketch Export Generator")
 
-A simple plugin that exports an asset at different scales, to make life for a designer working across multiple devices more convenient.
+A simple plugin to Sketch to generate export in iOS and Android with shortcuts.
 
 
 Installation
@@ -18,7 +18,7 @@ Usage
 
 1. Select layers.
 
-2. Select [Plugins] - [Export Scale Generator] - [Generate Scales] from the menu.
+2. Tap the shortcut "Shift + Option + Command + E" or go to the menu: Plugins > Sketch Export Generator > Add iOS and Android Exports
 
 
 License
