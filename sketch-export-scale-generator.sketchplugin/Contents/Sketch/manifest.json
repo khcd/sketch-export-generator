@@ -4,21 +4,21 @@
     {
       "script" : "handler.cocoascript",
       "handler" : "exportIOS",
-      "shortcut" : "ctrl shift 1",
+      "shortcut" : "option shift cmd i",
       "name" : "Add iOS Exports",
       "identifier" : "exportIOS"
     },
     {
       "script" : "handler.cocoascript",
       "handler" : "exportAndroid",
-      "shortcut" : "ctrl shift 2",
+      "shortcut" : "option shift cmd a",
       "name" : "Add Android Exports",
       "identifier" : "exportAndroid"
     },
     {
       "script" : "handler.cocoascript",
       "handler" : "exportAll",
-      "shortcut" : "ctrl shift 9",
+      "shortcut" : "option shift cmd e",
       "name" : "Add iOS and Android Exports",
       "identifier" : "exportAll"
     }
