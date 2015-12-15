@@ -124,6 +124,6 @@ function runExport(context) {
     }
     prepareExportSizes(layer);
   }
-
+  context.document.currentPage().deselectAllLayers();
   log('\nDone.');
 };
