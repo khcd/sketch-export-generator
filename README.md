@@ -5,7 +5,6 @@ Sketch Export Generator
 
 A simple plugin for Sketch to generate export in iOS and Android with shortcuts.
 
-
 Installation
 ------------
 
@@ -27,3 +26,8 @@ License
 -------
 
 **Sketch Export Sizes Generator** is under MIT license. See the LICENSE file for more info.
+
+Author
+------
+
+Proudly made by [Philippe Hong](http://philippehong.com) and [Kang Chen](http://Kangchen.me)
