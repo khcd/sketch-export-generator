@@ -5,6 +5,10 @@ Sketch Export Generator
 
 A simple plugin for Sketch to generate export in iOS and Android with shortcuts.
 
+Update : 4/02/16
+
+Support Sketch 3.5
+
 Installation
 ------------
 
