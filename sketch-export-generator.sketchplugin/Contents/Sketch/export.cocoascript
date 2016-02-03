@@ -58,8 +58,8 @@ function compare(a, b) {
 
 
 function prepareExportSizes(layer) {
-  log('=== ' + layer.name() + ' ===');
-  log('Remove all export sizes of layer \'' + layer.name() + '\'.');
+  //log('=== ' + layer.name() + ' ===');
+  //log('Remove all export sizes of layer \'' + layer.name() + '\'.');
   var sizes = layer.exportOptions().exportFormats()
   sizes.removeAllObjects();
 
