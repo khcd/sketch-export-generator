@@ -60,7 +60,7 @@ function compare(a, b) {
 function prepareExportSizes(layer) {
   log('=== ' + layer.name() + ' ===');
   log('Remove all export sizes of layer \'' + layer.name() + '\'.');
-  var sizes = layer.exportOptions().sizes();
+  var sizes = layer.exportOptions().exportFormats()
   sizes.removeAllObjects();
 
   //SIZES.sort(compare);
@@ -72,7 +72,7 @@ function prepareExportSizes(layer) {
 
 
   // add and remove a new export size to refresh UI
-  layer.exportOptions().addExportSize();
+  layer.exportOptions().addExportFormat();
   sizes.removeObjectAtIndex(sizes.count() - 1));
 }
 
@@ -85,10 +85,10 @@ function addExportSize(layer, scale, suffix, format) {
 
   //log('Add \'' + layer.name() + suffix + '\' (' + scale + 'h' + ')');
 
-  var size = layer.exportOptions().addExportSize();
+  var size = layer.exportOptions().addExportFormat();
   //log('size');
   //log(size);
-  size.setFormat(format);
+  //size.setFormat(format);
   size.setName(suffix);
   //log('set scale.');
   //log(scale);
