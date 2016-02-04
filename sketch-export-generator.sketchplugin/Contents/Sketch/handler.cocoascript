@@ -47,3 +47,9 @@ var exportAll = function(context) {
   runExport(context);
   context.document.showMessage("iOS and Android Exports added");
 }
+
+var clear = function(context) {
+
+  runClear(context);
+  context.document.showMessage("Exports cleared");
+}

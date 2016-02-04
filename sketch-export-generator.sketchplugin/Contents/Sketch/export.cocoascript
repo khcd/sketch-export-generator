@@ -127,3 +127,21 @@ function runExport(context) {
   context.document.currentPage().deselectAllLayers();
   log('\nDone.');
 };
+
+function runClear(context) {
+  var selectedLayers = context.selection;
+  var selectedCount = selectedLayers.count();
+  if (selectedCount == 0) {
+    //log('No layers are selected.');
+    return;
+  }
+  for (var i = 0; i < selectedCount; i++) {
+    var layer = selectedLayers[i];
+    if (i != 0) {
+      log('');
+    }
+    var sizes = layer.exportOptions().exportFormats()
+    sizes.removeAllObjects();
+  }
+  context.document.currentPage().deselectAllLayers();
+}

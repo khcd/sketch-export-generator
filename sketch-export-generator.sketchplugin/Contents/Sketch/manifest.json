@@ -21,13 +21,21 @@
       "shortcut" : "option shift cmd e",
       "name" : "Add iOS and Android Exports",
       "identifier" : "exportAll"
+    },
+    {
+      "script" : "handler.cocoascript",
+      "handler" : "clear",
+      "shortcut" : "option shift cmd c",
+      "name" : "Clear Exports",
+      "identifier" : "clear"
     }
   ],
   "menu" : {
     "items" : [
       "exportIOS",
       "exportAndroid",
-      "exportAll"
+      "exportAll",
+      "clear"
     ]
   },
   "identifier" : "me.kangchen.export-scale-generator",
