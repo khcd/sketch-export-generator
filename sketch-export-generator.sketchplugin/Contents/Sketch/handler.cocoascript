@@ -42,7 +42,8 @@ var exportAll = function(context) {
     {size: 1, suffix: "-mdpi"},
     {size: 1.5, suffix: "-hdpi"},
     {size: 2, suffix: "-xhdpi"},
-    {size: 3, suffix: "-xxhdpi"}
+    {size: 3, suffix: "-xxhdpi"},
+    {size: 4, suffix: "-xxxhdpi"}
   ])
   runExport(context);
   context.document.showMessage("iOS and Android Exports added");
