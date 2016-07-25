@@ -60,8 +60,10 @@ function compare(a, b) {
 function prepareExportSizes(layer) {
   //log('=== ' + layer.name() + ' ===');
   //log('Remove all export sizes of layer \'' + layer.name() + '\'.');
-  var sizes = layer.exportOptions().exportFormats()
-  sizes.removeAllObjects();
+  var sizes = layer.exportOptions().exportFormats();
+
+  // line below is commented to fix a Sketch 3.9 issue: https://github.com/kang-chen/sketch-export-generator/issues/5
+  //sizes.removeAllObjects();
 
   //SIZES.sort(compare);
   //SCALES.sort(compare);
