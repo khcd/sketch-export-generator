@@ -61,7 +61,7 @@ function prepareExportSizes(layer) {
   //log('=== ' + layer.name() + ' ===');
   //log('Remove all export sizes of layer \'' + layer.name() + '\'.');
   var sizes = layer.exportOptions().exportFormats()
-  sizes.removeAllObjects();
+  layer.exportOptions().removeAllExportFormats();
 
   //SIZES.sort(compare);
   //SCALES.sort(compare);
@@ -73,7 +73,7 @@ function prepareExportSizes(layer) {
 
   // add and remove a new export size to refresh UI
   layer.exportOptions().addExportFormat();
-  sizes.removeObjectAtIndex(sizes.count() - 1));
+  layer.exportOptions().removeExportFormat(layer.exportOptions().exportFormats().objectAtIndex(layer.exportOptions().exportFormats().count() -1));
 }
 
 
@@ -141,7 +141,7 @@ function runClear(context) {
       log('');
     }
     var sizes = layer.exportOptions().exportFormats()
-    sizes.removeAllObjects();
+    layer.exportOptions().removeAllExportFormats();
   }
   context.document.currentPage().deselectAllLayers();
 }
