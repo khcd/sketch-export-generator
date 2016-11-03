@@ -28,48 +28,15 @@ function setScale(scales) {
   SCALES = scales
 }
 
-function prompt() {
-
-  var informativeText = 'Comma separated integers.\ne.g. 1, 2, 3'
-  var alert = [NSAlert alertWithMessageText:'Enter scales'
-                              defaultButton:'OK'
-                            alternateButton:'Cancel'
-                                otherButton:nil
-                  informativeTextWithFormat:informativeText];
-
-  var textField = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 200, 24)];
-  textField.stringValue = '1, 2, 3';
-  alert.setAccessoryView(textField);
-
-  var button = alert.runModal();
-  if (button == NSAlertDefaultReturn) {
-    SCALES = textField.stringValue().split(/,\s*/).map(function (str) {
-      return parseFloat(str);
-    });
-  }
-  //log('SCALES');
-  //log(SCALES);
-}
-
-
-function compare(a, b) {
-  return b - a;
-}
-
-
 function prepareExportSizes(layer) {
   //log('=== ' + layer.name() + ' ===');
   //log('Remove all export sizes of layer \'' + layer.name() + '\'.');
   var sizes = layer.exportOptions().exportFormats()
   layer.exportOptions().removeAllExportFormats();
 
-  //SIZES.sort(compare);
-  //SCALES.sort(compare);
-
   for (scale of SCALES) {
     addExportSize(layer, scale.size, scale.suffix);
   }
-
 
   // add and remove a new export size to refresh UI
   layer.exportOptions().addExportFormat();
@@ -82,13 +49,11 @@ function addExportSize(layer, scale, suffix, format) {
   if (!format) {
     format = 'png';
   }
-
   //log('Add \'' + layer.name() + suffix + '\' (' + scale + 'h' + ')');
 
   var size = layer.exportOptions().addExportFormat();
   //log('size');
   //log(size);
-  //size.setFormat(format);
   size.setName(suffix);
   //log('set scale.');
   //log(scale);
@@ -126,7 +91,7 @@ function runExport(context) {
   }
   context.document.currentPage().deselectAllLayers();
   log('\nDone.');
-};
+}
 
 function runClear(context) {
   var selectedLayers = context.selection;

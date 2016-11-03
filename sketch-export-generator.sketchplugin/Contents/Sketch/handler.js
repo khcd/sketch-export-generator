@@ -1,5 +1,5 @@
 
-@import 'export.cocoascript'
+@import 'export.js'
 
 var exportIOS = function(context) {
   //setScale([1,2,3]);
