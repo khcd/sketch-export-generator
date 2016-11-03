@@ -2,28 +2,28 @@
   "author" : "Philippe Hong, Kang Chen",
   "commands" : [
     {
-      "script" : "handler.cocoascript",
+      "script" : "handler.js",
       "handler" : "exportIOS",
       "shortcut" : "option shift cmd i",
       "name" : "Add iOS Exports",
       "identifier" : "exportIOS"
     },
     {
-      "script" : "handler.cocoascript",
+      "script" : "handler.js",
       "handler" : "exportAndroid",
       "shortcut" : "option shift cmd a",
       "name" : "Add Android Exports",
       "identifier" : "exportAndroid"
     },
     {
-      "script" : "handler.cocoascript",
+      "script" : "handler.js",
       "handler" : "exportAll",
       "shortcut" : "option shift cmd e",
       "name" : "Add iOS and Android Exports",
       "identifier" : "exportAll"
     },
     {
-      "script" : "handler.cocoascript",
+      "script" : "handler.js",
       "handler" : "clear",
       "shortcut" : "option shift cmd c",
       "name" : "Clear Exports",
