@@ -60,13 +60,21 @@ function addExportSize(layer, scale, suffix, format) {
   }
   //log('Add \'' + layer.name() + suffix + '\' (' + scale + 'h' + ')');
 
+  // var size = layer.exportOptions().addExportFormats();
   var size = layer.exportOptions().addExportFormat();
-  //log('size');
+  log('***** size ******');
+  //log(size);
   //log(size);
   size.setName(suffix);
   //log('set scale.');
   //log(scale);
   size.setScale(scale);
+
+  size.fileFormat = format;
+  // size.name = suffix;
+  // size.scale = scale;
+  log(size.fileFormat);
+  // size.setFormat(format);
   //size.setVisibleScaleType(2); // e.g. 512h
 }
 
