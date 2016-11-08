@@ -24,6 +24,20 @@
     },
     {
       "script" : "handler.js",
+      "handler" : "exportPDF",
+      "shortcut" : "option shift cmd p",
+      "name" : "Add PDF Exports",
+      "identifier" : "exportPDF"
+    },
+    {
+      "script" : "handler.js",
+      "handler" : "exportSVG",
+      "shortcut" : "option shift cmd g",
+      "name" : "Add SVG Exports",
+      "identifier" : "exportSVG"
+    },
+    {
+      "script" : "handler.js",
       "handler" : "clear",
       "shortcut" : "option shift cmd c",
       "name" : "Clear Exports",
@@ -35,6 +49,8 @@
       "exportIOS",
       "exportAndroid",
       "exportAll",
+      "exportPDF",
+      "exportSVG",
       "clear"
     ]
   },

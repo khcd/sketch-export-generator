@@ -28,14 +28,14 @@ function setScale(scales) {
   SCALES = scales;
 }
 
-function prepareExportSizes(layer) {
+function prepareExportSizes(layer, format) {
   //log('=== ' + layer.name() + ' ===');
   //log('Remove all export sizes of layer \'' + layer.name() + '\'.');
   var sizes = layer.exportOptions().exportFormats();
   layer.exportOptions().removeAllExportFormats();
 
   SCALES.forEach(function(scale) {
-    addExportSize(layer, scale.size, scale.suffix);
+    addExportSize(layer, scale.size, scale.suffix, format);
   });
 
   // for each (var scale in SCALES) {
@@ -55,7 +55,7 @@ function prepareExportSizes(layer) {
 
 function addExportSize(layer, scale, suffix, format) {
 
-  if (!format) {
+  if ( !format || typeof(format) == "undefined") {
     format = "png";
   }
   //log('Add \'' + layer.name() + suffix + '\' (' + scale + 'h' + ')');
@@ -86,7 +86,16 @@ function runExportAndroid(context) {
   runExport(context);
 }
 
-function runExport(context) {
+function runExportPDF(context) {
+  runExport(context, "pdf");
+}
+
+function runExportSVG(context) {
+  runExport(context, "svg");
+}
+
+
+function runExport(context, format) {
 
   var selectedLayers = context.selection;
   var selectedCount = selectedLayers.count();
@@ -104,7 +113,7 @@ function runExport(context) {
     if (i != 0) {
       log("");
     }
-    prepareExportSizes(layer);
+    prepareExportSizes(layer, format);
   }
   context.document.currentPage().deselectAllLayers();
   log("\nDone.");

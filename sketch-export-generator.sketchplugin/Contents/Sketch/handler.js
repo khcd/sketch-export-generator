@@ -49,6 +49,22 @@ var exportAll = function(context) {
   context.document.showMessage("iOS and Android Exports added");
 }
 
+var exportPDF = function(context) {
+  setScale([
+    {size: 1, suffix: ""},
+  ])
+	runExportPDF(context);
+  context.document.showMessage("PDF Export added");
+}
+
+var exportSVG = function(context) {
+  setScale([
+    {size: 1, suffix: ""},
+  ])
+	runExportSVG(context);
+  context.document.showMessage("SVG Export added");
+}
+
 var clear = function(context) {
 
   runClear(context);
