@@ -42,5 +42,5 @@
   "version" : "1.0.0",
   "description" : "A simple plugin to add iOS and Android exports with shortcut.",
   "authorEmail" : "me@philippehong.com",
-  "name" : "Sketch Export Generator"
+  "name" : "Sketch Export Generator @2x"
 }
