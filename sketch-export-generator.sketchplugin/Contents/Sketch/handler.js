@@ -8,7 +8,9 @@ var exportIOS = function(context) {
     {size: 2, suffix: "@2x"},
     {size: 3, suffix: "@3x"}
   ])
-	runExportIOS(context);
+
+  runExportIOS(context);
+
   context.document.showMessage("iOS Exports added");
 }
 
@@ -29,7 +31,7 @@ var exportAndroid = function(context) {
     {size: 3, suffix: "-xxhdpi"},
     {size: 4, suffix: "-xxxhdpi"}
   ])
-	runExportAndroid(context);
+  runExportAndroid(context);
   context.document.showMessage("Android Exports added");
 }
 
@@ -53,7 +55,8 @@ var exportPDF = function(context) {
   setScale([
     {size: 1, suffix: ""},
   ])
-	runExportPDF(context);
+
+  runExportPDF(context);
   context.document.showMessage("PDF Export added");
 }
 
@@ -61,7 +64,7 @@ var exportSVG = function(context) {
   setScale([
     {size: 1, suffix: ""},
   ])
-	runExportSVG(context);
+  runExportSVG(context);
   context.document.showMessage("SVG Export added");
 }
 

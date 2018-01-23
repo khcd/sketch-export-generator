@@ -7,7 +7,7 @@ A simple plugin for Sketch to generate export in iOS and Android with shortcuts.
 
 Update : 29/07/16
 
-Support Sketch 39.1
+Support Sketch 48.2
 
 Installation
 ------------
